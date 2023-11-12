@@ -1,0 +1,218 @@
+@font-face {
+    font-family: Roboto-Bold;
+    src: url('./assets/fonts/Roboto-Bold.ttf');
+}
+@font-face {
+    font-family: Roboto-Regular;
+    src: url('./assets/fonts/Roboto-Regular.ttf');
+}
+
+:root {
+    --mobile-width: 375px;
+    --desktop-width: 1440px;
+
+    --tomato: hsl(4, 100%, 67%);
+    --bg-color: hsl(9, 100%, 90%);
+    --dark-Slate-Grey: hsl(234, 29%, 20%);
+    --charcoal-Grey: hsl(235, 18%, 26%);
+    --grey: hsl(231, 7%, 60%);
+    --white: hsl(0, 0%, 100%);
+
+    /* paragraph font */
+    --font-size: 16px;
+
+}
+
+body {
+    font-family: Roboto-Regular;
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    background-color: var(--white);
+}
+
+h1 {
+    font-family: Roboto-Bold;
+    font-size: 30px;
+    margin-top: 1em;
+    color: var(--dark-Slate-Grey);
+}
+
+p {
+    color: var(--charcoal-Grey);
+}
+
+.suppot-photo.desktop img,
+.suppot-photo.desktop {
+    display: none;
+}
+
+.suppot-photo.mobile img,
+.suppot-photo.mobile {
+    display: block;
+    padding: 0;
+}
+
+
+.content {
+    margin-inline: 1.2em;
+}
+
+.sign-up-Success {
+    padding-block: 40%;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+}
+
+.list li {
+    display: flex;
+    padding-block: .5em;
+}
+
+.list li::before {
+    content: '';
+    display: block;
+    height: 2rem;
+    width: 2rem;
+    background-image: url(./assets/images/icon-list.svg);
+    background-size: 1.1rem;
+    background-repeat: no-repeat
+}
+
+.sign-up-form::before,
+.sign-up-form span {
+    content: 'Email address';
+    font-size: .65em;
+    font-weight: 600;
+    display: flex;
+}
+
+.sign-up-form span {
+    float: right;
+    color: var(--tomato);
+    display: none;
+}
+
+input:is([type="email"],
+    [type="submit"]) {
+    margin-block: .5em;
+    padding: 1em;
+    border-radius: .4em;
+    width: calc(100% - 2em);
+    transition: border .15s;
+    outline: none;
+}
+
+input:user-invalid {
+    border: 1px solid var(--tomato);
+    background-color: var(--bg-color);
+    outline: none;
+}
+
+input[type="email"]:focus {
+    outline: none;
+    color: #000;
+    border: 1px solid var(--tomato);
+}
+
+input[type="submit"] {
+    width: 100%;
+    background-color: var(--dark-Slate-Grey);
+    color: var(--white);
+    cursor: pointer;
+    transition: transform .1s;
+}
+
+input[type="submit"]:active {
+    transform: scale(.95);
+    background-color: var(--tomato);
+}
+
+input[type="submit"]:hover {
+    background-color: var(--tomato);
+    border: var(--tomato);
+    box-shadow: 0px 0px 7px 0px var(--tomato);
+}
+
+.Dismiss {
+    width: calc(100% - 2em) !important;
+    position: absolute;
+    bottom: 3em;
+}
+
+.attribution {
+    display: none;
+}
+@media screen and (min-width: 380px) {
+    body {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: var(--dark-Slate-Grey);
+    }
+
+    .content {
+        margin-inline: 1.2em;
+        margin-block: 1em;
+        max-width: 300px;
+    }
+
+    .suppot-photo.mobile img {
+        display: none;
+    }
+
+    .suppot-photo.desktop,
+    .suppot-photo.desktop img {
+        display: block;
+        width: calc(25em - 4%);
+    }
+
+    .sign-up-page {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row-reverse;
+        background-color: var(--white);
+        border: 5px solid #fff;
+        border-radius: 20px;
+        padding: .8em;
+        overflow: hidden;
+    }
+
+    .list li {
+        display: flex;
+        padding-block: .1em;
+    }
+    .sign-up-Success{
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+    .success-svg{
+        float: left;
+    }
+
+    main.thanksDiv{
+        background-color: var(--white);
+        border-radius: 20px;
+        display: flex;
+    }
+    input[type="submit"] {
+       position: relative;
+       bottom: .1em;
+    }
+    .Dismiss {
+        width: calc(100%) !important;
+        position: absolute;
+        bottom: 3em;
+    }
+
+}
